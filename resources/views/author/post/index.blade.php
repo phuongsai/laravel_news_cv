@@ -51,7 +51,7 @@
                     @forelse($posts as $key => $post)
                     <tr class="text-center">
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ str_limit($post->title,'10') }}</td>
+                        <td>{{ $post->title }}</td>
                         <td>{{ $post->user->name }}</td>
                         <td>{{ $post->view_count }}</td>
                         <td>

@@ -104,7 +104,7 @@
                     <div class="row clearfix">
                         <div class="col-xl-12 col-md-12 mb-10">
                             <label class="col-12 col-md-3 col-lg-3">Content:</label>
-                            <textarea id="editor" name="body">{{ old('body') ?? ''}}</textarea>
+                            <textarea id="editor" name="body">{{ $post->body ?? old('body') }}</textarea>
                         </div>
                         <div class="col-xl-10 col-md-10 mb-10">
                             <button type="submit" class="btn btn-primary m-t-15">SUBMIT</button>

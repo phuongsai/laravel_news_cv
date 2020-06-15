@@ -24,7 +24,7 @@ class SettingsController extends Controller
             $user = Auth::user();
             if (isset($image)) {
                 // CLOUDINARY UPLOAD
-                $upload = Cloudder::upload($image, 'profiles/' . $image);
+                $upload = Cloudder::upload($image, 'profiles/' . $image)->getResult();
 
                 if ($upload) {
                     // delete old image when image_id NOT NULL
@@ -32,8 +32,8 @@ class SettingsController extends Controller
                         Cloudder::delete($user->image_id);
                     }
                     // assign new image
-                    $image_id = Cloudder::getPublicId();
-                    $image_url = Cloudder::show($image_id);
+                    $image_id = $upload['public_id'];
+                    $image_url = $upload['url'];
                 } else {
                     Toastr::error('Upload image failed!', 'Error');
 

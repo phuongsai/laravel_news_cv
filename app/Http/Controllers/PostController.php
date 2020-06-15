@@ -55,12 +55,13 @@ class PostController extends Controller
             $title = $request->title;
             if (isset($image)) {
                 // CLOUDINARY UPLOAD
-                $upload = Cloudder::upload($image, 'posts/' . $image);
+                $upload = Cloudder::upload($image, 'posts/' . $image)->getResult();
 
+                dd($upload);
                 if ($upload) {
                     // assign new image
-                    $image_id = Cloudder::getPublicId();
-                    $image_url = Cloudder::show($image_id);
+                    $image_id = $upload['public_id'];
+                    $image_url = $upload['url'];
                 } else {
                     Toastr::error('Upload image failed!', 'Error');
 
@@ -161,7 +162,7 @@ class PostController extends Controller
                 $image = $request->file('image');
                 if (isset($image)) {
                     // CLOUDINARY UPLOAD
-                    $upload = Cloudder::upload($image, 'posts/' . $image);
+                    $upload = Cloudder::upload($image, 'posts/' . $image)->getResult();
 
                     if ($upload) {
                         // delete old image when image_id NOT NULL
@@ -169,8 +170,8 @@ class PostController extends Controller
                             Cloudder::delete($post->image_id);
                         }
                         // assign new image
-                        $image_id = Cloudder::getPublicId();
-                        $image_url = Cloudder::show($image_id);
+                        $image_id = $upload['public_id'];
+                        $image_url = $upload['url'];
                     } else {
                         Toastr::error('Upload image failed!', 'Error');
 
