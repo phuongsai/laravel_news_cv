@@ -24,7 +24,6 @@ class TagValidationRequest extends FormRequest
      */
     public function rules()
     {
-        dd($this->id);
         return [
             'name' => [
                 'required',
