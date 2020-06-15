@@ -25,7 +25,7 @@ class PostValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'max:255', 'min:3', new RegexRule('/(^[A-Za-z0-9@ ()%,:<>?*&-]+$)+/')],
+            'title' => ['required', 'max:255', 'min:3'],
             'testimage' => 'image|mimes:jpeg,png,jpg,gif,svg,bmp|max:10240',
             'categories' => 'required|array|min:1|max:2',
             'tags' => 'required|array|min:1|max:3',

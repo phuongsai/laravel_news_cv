@@ -57,7 +57,6 @@ class PostController extends Controller
                 // CLOUDINARY UPLOAD
                 $upload = Cloudder::upload($image, 'posts/' . $image)->getResult();
 
-                dd($upload);
                 if ($upload) {
                     // assign new image
                     $image_id = $upload['public_id'];
