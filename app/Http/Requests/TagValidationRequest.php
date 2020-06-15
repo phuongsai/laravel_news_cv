@@ -29,6 +29,7 @@ class TagValidationRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:25',
+                'unique:tags'
             ],
         ];
     }

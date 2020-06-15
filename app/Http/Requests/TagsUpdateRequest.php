@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\RegexRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryValidationRequest extends FormRequest
+class TagsUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,22 +27,9 @@ class CategoryValidationRequest extends FormRequest
             'name' => [
                 'required',
                 'min:3',
-                'max:23',
-                'unique:categories',
+                'max:25',
+                'unique:tags,name,' . $this->id . ',id',
             ],
-        ];
-    }
-
-    /*
-     * Custom message for validation.
-     *
-     * @return array
-     */
-
-    public function messages()
-    {
-        return [
-            'name.required' => 'Name is required!',
         ];
     }
 }

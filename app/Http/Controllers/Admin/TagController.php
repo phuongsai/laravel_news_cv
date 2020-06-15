@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TagsUpdateRequest;
 use App\Http\Requests\TagValidationRequest;
 use App\Models\Tag;
 use Brian2694\Toastr\Facades\Toastr;
@@ -93,7 +94,7 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(TagValidationRequest $request, Tag $tag)
+    public function update(TagsUpdateRequest $request, Tag $tag)
     {
         try {
             $tag->name = $request->name;
@@ -127,7 +128,7 @@ class TagController extends Controller
         }
         // update new value for each post before delete tag
         $tag->posts()->whereTagId($id)->update(['tag_id' => 1]); // default record 'other'
-        $tag->posts()->detach();
+        // $tag->posts()->detach();
         $tag->delete();
         Toastr::success('Tag Successfully Deleted :)', 'Success');
 

@@ -19,6 +19,7 @@
                     <form method="POST" action="{{ route('admin.category.update', $category) }}" id="formData">
                         @csrf
                         @method('PUT')
+                        <input type="hidden" name="id" value="{{ $category->id }}">
                         <div class="form-group row mb-6">
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
                             <div class="col-sm-12 col-md-7">

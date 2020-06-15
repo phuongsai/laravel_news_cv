@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoriesUpdateRequest;
 use App\Http\Requests\CategoryValidationRequest;
 use App\Models\Category;
 use Brian2694\Toastr\Facades\Toastr;
@@ -90,7 +91,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryValidationRequest $request, Category $category)
+    public function update(CategoriesUpdateRequest $request, Category $category)
     {
         try {
             $category->name = $request->name;
@@ -126,7 +127,7 @@ class CategoryController extends Controller
         // update new value for each post before delete category
         $category->posts()->whereCategoryId($id)->update(['category_id' => 1]); // default record 'other'
         // $category->posts()->wherePivot('category_id', $id)->updateExistingPivot($id, ['category_id' => 0]);
-        $category->posts()->detach();
+        // $category->posts()->detach();
         $category->delete();
         Toastr::success('Category Successfully Deleted :)', 'Success');
 
