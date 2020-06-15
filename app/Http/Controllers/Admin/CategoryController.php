@@ -41,7 +41,7 @@ class CategoryController extends Controller
         try {
             $category = new Category();
             $category->name = $request->name;
-            $category->slug = Str::slug($request->name);
+            $category->slug = $request->name;
             $category->save();
         } catch (\Exception $e) {
             Toastr::error('Something went wrong!', 'Error');
@@ -95,7 +95,7 @@ class CategoryController extends Controller
     {
         try {
             $category->name = $request->name;
-            $category->slug = str_slug($request->name);
+            $category->slug = $request->name;
             $category->update();
         } catch (\Exception $e) {
             Toastr::error('Something went wrong!', 'Error');

@@ -16,7 +16,7 @@ class AuthorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && 2 === Auth::user()->role->id) {
+        if (Auth::check() && 2 == Auth::user()->role->id) {
             return $next($request);
         }
 

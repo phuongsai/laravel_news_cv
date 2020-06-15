@@ -46,7 +46,7 @@ class TagController extends Controller
         try {
             $tag = new Tag();
             $tag->name = $request->name;
-            $tag->slug = Str::slug($request->name);
+            $tag->slug = $request->name;
             $tag->save();
         } catch (\Exception $e) {
             Toastr::error('Something went wrong!', 'Error');
@@ -98,7 +98,7 @@ class TagController extends Controller
     {
         try {
             $tag->name = $request->name;
-            $tag->slug = Str::slug($request->name);
+            $tag->slug = $request->name;
             $tag->save();
         } catch (\Exception $e) {
             Toastr::error('Something went wrong!', 'Error');
