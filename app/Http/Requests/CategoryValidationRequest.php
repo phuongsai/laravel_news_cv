@@ -29,7 +29,6 @@ class CategoryValidationRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:23',
-                'unique:categories,name,' . $this->id . ',id',
             ],
         ];
     }

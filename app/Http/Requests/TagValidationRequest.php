@@ -24,12 +24,12 @@ class TagValidationRequest extends FormRequest
      */
     public function rules()
     {
+        dd($this->id);
         return [
             'name' => [
                 'required',
                 'min:3',
                 'max:25',
-                'unique:tags,name,' . $this->id . ',id',
             ],
         ];
     }

@@ -46,9 +46,7 @@ class TagController extends Controller
             $tag = new Tag();
             $tag->name = $request->name;
             $tag->slug = $request->name;
-            dump($tag);
             $tag->save();
-            dd('saved!');
         } catch (\Exception $e) {
             Toastr::error('Something went wrong!', 'Error');
 
