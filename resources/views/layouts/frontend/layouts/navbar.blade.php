@@ -43,7 +43,7 @@
                     <li class="sm:mr-8"><a class="text-inherit hover:text-red"
                         href="{{ route('category.posts','tutorials') }}">Tutorials</a></li>
                     <li class="sm:mr-8"><a class="text-inherit hover:text-red"
-                        href="{{ route('category.posts','laravel-books') }}">Books</a>
+                        href="{{ route('category.posts','books') }}">Books</a>
                     </li>
                 </ul>
             </div>
@@ -83,7 +83,7 @@
                             href="{{ route('category.posts','tutorials') }}">Tutorials</a></li>
                     <li class="block" style="letter-spacing: 2.2px;"><a
                             class="block text-xs text-grey uppercase mx-4 my-3"
-                            href="{{ route('category.posts','laravel-books') }}">Books</a></li>
+                            href="{{ route('category.posts','books') }}">Books</a></li>
                 </ol>
 
                 <!-- Footer Logo -->
