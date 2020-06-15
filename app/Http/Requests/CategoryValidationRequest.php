@@ -26,7 +26,7 @@ class CategoryValidationRequest extends FormRequest
     {
         return [
             'name' => [
-                'required', new RegexRule('/^((\w+ )*\w+)?$/'),
+                'required',
                 'min:3',
                 'max:23',
                 'unique:categories,name,' . $this->id . ',id',

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TagValidationRequest;
 use App\Models\Tag;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Support\Str;
 
 class TagController extends Controller
 {
@@ -18,7 +17,7 @@ class TagController extends Controller
     public function index()
     {
         return view('admin.tag.index')
-            ->withTags(Tag::latest()->with('posts')->get());
+            ->withTags(Tag::latest()->withCount('posts')->get());
 
         /*
         $tags = Tag::latest()->get();

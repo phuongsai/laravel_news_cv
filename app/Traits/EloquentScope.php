@@ -2,8 +2,6 @@
 
 namespace App\Traits;
 
-use Illuminate\Support\Str;
-
 trait EloquentScope
 {
     /**
@@ -14,7 +12,7 @@ trait EloquentScope
     public function setSlugAttribute($value)
     {
         // Normalize the title which is the value
-        $slug = Str::slug($value);
+        $slug = str_slug($value);
         // check the new slug is exist or not
         if (static::whereSlug($slug)->exists()) {
             $slug = $this->incrementSlug($slug);

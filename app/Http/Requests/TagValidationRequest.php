@@ -26,7 +26,7 @@ class TagValidationRequest extends FormRequest
     {
         return [
             'name' => [
-                'required', new RegexRule('/(^[A-Za-z0-9-]+$)+/'),
+                'required',
                 'min:3',
                 'max:25',
                 'unique:tags,name,' . $this->id . ',id',

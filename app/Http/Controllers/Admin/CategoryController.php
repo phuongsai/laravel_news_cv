@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryValidationRequest;
 use App\Models\Category;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {

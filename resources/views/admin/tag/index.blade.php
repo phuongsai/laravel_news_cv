@@ -48,7 +48,7 @@
                     <tr class="text-center">
                         <td>{{ $key + 1 }}</td>
                         <td>{{ $tag->name }}</td>
-                        <td>{{ $tag->posts->count() }}</td>
+                        <td>{{ $tag->posts_count }}</td>
                         <td>{{ $tag->created_at }}</td>
                         <td>{{ $tag->updated_at }}</td>
                         <td class="text-center">
