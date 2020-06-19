@@ -8,7 +8,7 @@
                 <use xlink:href="#icon-arrow-thin-left" /></svg>
             <div class="text-sm text-grey-lighter">
             <h4 class="text-grey-darkest text-base font-sans mb-1">{{ $prevPost->title }}</h4>
-                <p>{!! \Illuminate\Support\Str::limit($prevPost->body, 150) !!}</p>
+                <p>{{ \Illuminate\Support\Str::limit($prevPost->body, 150) }}</p>
             </div>
         </a>
         @endif
@@ -19,7 +19,7 @@
             style="max-width: 425px">
             <div class="text-sm text-grey-lighter">
             <h4 class="text-grey-darkest text-base font-sans mb-1">{{ $nextPost->title }}</h4>
-                <p>{!! \Illuminate\Support\Str::limit($nextPost->body, 150) !!}</p>
+                <p>{{ \Illuminate\Support\Str::limit($nextPost->body, 150) }}</p>
             </div>
             <svg class="ml-8 h-16 w-6 text-red hover:red-darker transition">
                 <use xlink:href="#icon-arrow-thin-right" /></svg>
