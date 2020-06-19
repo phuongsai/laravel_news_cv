@@ -13,7 +13,7 @@
         <ol class="list-none pl-0 flex flex-wrap justify-center">
             @forelse ($tags as $tag)
                 <li class="btn--thin">
-                    <a href="{{ route('tag.posts',$tag) }} class="btn--transparent font-bold text-white hover:text-grey-lighter transition hljs-doctag"
+                    <a href="{{ route('tag.posts', $tag) }}" class="btn--transparent font-bold text-white hover:text-grey-lighter transition"
                         rel="nofollow"><i> #{{ $tag->name }}</i>
                     </a>
                 </li>
