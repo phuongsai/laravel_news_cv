@@ -7,7 +7,7 @@
             <svg class="mr-8 h-16 w-6 text-red hover:red-darker transition">
                 <use xlink:href="#icon-arrow-thin-left" /></svg>
             <div class="text-sm text-grey-lighter">
-            <h4 class="text-grey-darkest text-xs font-sans mb-1">{{ $prevPost->title }}</h4>
+            <h4 class="text-grey-darkest text-base font-sans mb-1">{{ $prevPost->title }}</h4>
                 <p>{!! \Illuminate\Support\Str::limit($prevPost->body, 150) !!}</p>
             </div>
         </a>
