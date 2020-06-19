@@ -10,19 +10,19 @@
         <h2 class="text-white mb-0 text-3xl leading-tight">Tags</h2>
     </header>
     <div class="card__content h-auto">
-        <dl class="list-unstyled">
+        <ol class="list-none pl-0 flex flex-wrap justify-center">
             @forelse ($tags as $tag)
-                <dt>
-                    <a href="{{ route('tag.posts',$tag) }} class="font-bold text-white hover:text-grey-lighter transition"
+                <li class="btn--thin">
+                    <a href="{{ route('tag.posts',$tag) }} class="btn--transparent font-bold text-white hover:text-grey-lighter transition hljs-doctag"
                         rel="nofollow"><i> #{{ $tag->name }}</i>
                     </a>
-                </dt>
+                </li>
             @empty
-                <dd class="text-sm text-grey mb-4">
+                <li class="text-sm text-grey mb-4">
                     No Tag!
-                </dd>
+                </li>
             @endforelse
-        </dl>
+        </ol>
     </div>
 </div>
 <!-- /Tags info-->
